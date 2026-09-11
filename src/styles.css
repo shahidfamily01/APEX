@@ -1,0 +1,199 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * APEX FIT CLUB design system — dark steel + molten amber.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --font-display: "Anton", ui-sans-serif, sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-steel: var(--steel);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.145 0.005 260);
+  --foreground: oklch(0.96 0.005 260);
+  --card: oklch(0.19 0.006 260);
+  --card-foreground: oklch(0.96 0.005 260);
+  --popover: oklch(0.19 0.006 260);
+  --popover-foreground: oklch(0.96 0.005 260);
+  --primary: oklch(0.75 0.17 62);
+  --primary-foreground: oklch(0.16 0.01 60);
+  --secondary: oklch(0.26 0.007 260);
+  --secondary-foreground: oklch(0.96 0.005 260);
+  --muted: oklch(0.24 0.006 260);
+  --muted-foreground: oklch(0.68 0.01 260);
+  --accent: oklch(0.28 0.01 260);
+  --accent-foreground: oklch(0.96 0.005 260);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0.005 260);
+  --border: oklch(0.3 0.008 260);
+  --input: oklch(0.3 0.008 260);
+  --ring: oklch(0.75 0.17 62);
+  --steel: oklch(0.72 0.012 260);
+  --sidebar: oklch(0.17 0.006 260);
+  --sidebar-foreground: oklch(0.96 0.005 260);
+  --sidebar-primary: oklch(0.75 0.17 62);
+  --sidebar-primary-foreground: oklch(0.16 0.01 60);
+  --sidebar-accent: oklch(0.26 0.007 260);
+  --sidebar-accent-foreground: oklch(0.96 0.005 260);
+  --sidebar-border: oklch(0.3 0.008 260);
+  --sidebar-ring: oklch(0.75 0.17 62);
+
+  --gradient-hero: linear-gradient(
+    to top,
+    oklch(0.11 0.005 260 / 0.98) 0%,
+    oklch(0.13 0.005 260 / 0.82) 40%,
+    oklch(0.16 0.005 260 / 0.45) 100%
+  );
+  --gradient-steel: linear-gradient(135deg, oklch(0.28 0.008 260), oklch(0.18 0.006 260));
+  --shadow-lift: 0 24px 60px -30px oklch(0 0 0 / 0.9);
+  --shadow-glow: 0 0 0 1px oklch(0.75 0.17 62 / 0.35), 0 18px 50px -24px oklch(0.75 0.17 62 / 0.5);
+  --shadow-white-glow: 0 0 0 1px oklch(1 0 0 / 0.28), 0 0 28px -4px oklch(1 0 0 / 0.28);
+  --shadow-white-glow-strong: 0 0 0 1px oklch(1 0 0 / 0.5), 0 0 34px -2px oklch(1 0 0 / 0.42);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  button,
+  a[data-slot="button"],
+  a[href^="http"],
+  a[href^="mailto"] {
+    transition:
+      box-shadow 0.25s ease,
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  button:hover,
+  a[data-slot="button"]:hover,
+  a[href^="http"]:hover,
+  a[href^="mailto"]:hover {
+    box-shadow: var(--shadow-white-glow);
+  }
+
+  button:active,
+  a[data-slot="button"]:active,
+  a[href^="http"]:active,
+  a[href^="mailto"]:active {
+    box-shadow: var(--shadow-white-glow-strong);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+@utility surface-card {
+  background: var(--gradient-steel);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lift);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    border-color: oklch(1 0 0 / 0.45);
+    box-shadow: var(--shadow-white-glow);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: var(--shadow-white-glow-strong);
+    transform: translateY(0);
+  }
+}
+
+@utility glow-hover {
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-white-glow);
+  }
+
+  &:active {
+    box-shadow: var(--shadow-white-glow-strong);
+  }
+}
+
+@utility hero-overlay {
+  background: var(--gradient-hero);
+}
+
+@utility rule-accent {
+  &::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    margin-top: 0.75rem;
+    background: var(--color-primary);
+  }
+}
