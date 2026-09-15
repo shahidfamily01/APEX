@@ -138,7 +138,7 @@ export const trainers: Trainer[] = [
   },
   {
     name: "Adil",
-    role: "Manager",
+    role: "Trainer",
     experience: "7 years experience",
     specialties: [
       "Boxing",
@@ -151,8 +151,8 @@ export const trainers: Trainer[] = [
       "Diet Plan",
     ],
     bio: "Manages the training floor and coaches boxing, kickboxing, CrossFit and conditioning alongside strength programming.",
-    whatsapp: "923335210375",
-    phoneDisplay: "0333-5210375",
+    whatsapp: "923305966918",
+    phoneDisplay: "",
     photo: imageUrls.trainerTwo,
     owner: false,
   },
@@ -162,22 +162,12 @@ export const trainers: Trainer[] = [
     experience: "5 years experience",
     specialties: ["Strength", "Muscle Gain", "Fat Loss"],
     bio: "Floor trainer working one-on-one with members on technique, routine planning and steady progress.",
-    whatsapp: "923224052167",
-    phoneDisplay: "0322-4052167",
+    whatsapp: "923305966918",
+    phoneDisplay: "",
     photo: imageUrls.trainerThree,
     owner: false,
   },
-  {
-    name: "Arslan",
-    role: "Trainer",
-    experience: "",
-    specialties: ["Cardio", "Strength", "Muscle Gain", "Full Body Fitness", "Diet Plan"],
-    bio: "Coach for members who want power, conditioning, clean lifting form and full body fitness.",
-    whatsapp: "923150428249",
-    phoneDisplay: "0315-0428249",
-    photo: null,
-    owner: false,
-  },
+
 ];
 
 export const ladiesTrainers: Trainer[] = [
@@ -192,8 +182,8 @@ export const ladiesTrainers: Trainer[] = [
       "PSCA Level III Certified — Master Trainer (Sports Nutrition, Fitness, Gym, Rehabilitation & First Aid)",
     ],
     bio: "Ladies-only master trainer coaching strength, cardio, nutrition and rehabilitation in our private women's hours.",
-    whatsapp: "923110091690",
-    phoneDisplay: "0311-0091690",
+    whatsapp: "923305966918",
+    phoneDisplay: "",
     photo: imageUrls.trainerLadies,
     owner: false,
   },

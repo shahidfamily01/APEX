@@ -53,11 +53,16 @@ export function TrainerCard({ trainer: t }: { trainer: Trainer }) {
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.bio}</p>
         <Button asChild className="mt-6 w-full">
           <a
-            href={waLink(t.whatsapp, `Hi ${t.name}, I'd like to train at Apex Fit Club.`)}
+            href={waLink(
+              t.whatsapp,
+              t.owner
+                ? `Hi ${t.name}, I'd like to train at Apex Fit Club.`
+                : `Hi, I'd like to hire ${t.name} as my trainer at Apex Fit Club.`
+            )}
             target="_blank"
             rel="noreferrer noopener"
           >
-            <MessageCircle className="h-4 w-4" /> WhatsApp {t.phoneDisplay}
+            <MessageCircle className="h-4 w-4" /> {t.phoneDisplay ? `WhatsApp ${t.phoneDisplay}` : "WhatsApp"}
           </a>
         </Button>
       </div>
